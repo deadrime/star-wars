@@ -10,7 +10,7 @@
       >
         <div class="spec">
           <span class="spec__unit">Population</span>
-          <span class="spec__value">{{ item.population | nFormat }}</span>
+          <span class="spec__value">{{ item.population || '?' | nFormat }}</span>
         </div>
         <div class="spec">
           <span class="spec__unit">Diameter</span>
