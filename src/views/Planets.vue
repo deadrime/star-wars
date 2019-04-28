@@ -10,7 +10,9 @@
       >
         <div class="spec">
           <span class="spec__unit">Population</span>
-          <span class="spec__value">{{ item.population || '?' | nFormat }}</span>
+          <span class="spec__value">{{
+            item.population || '?' | nFormat
+          }}</span>
         </div>
         <div class="spec">
           <span class="spec__unit">Diameter</span>
@@ -20,7 +22,7 @@
         </div>
       </Card>
     </div>
-    <Pagination :page="page" :total="total" @change="handleChangePage" />
+    <Pagination :page.sync="page" :total="total" @change="handleChangePage" />
   </div>
 </template>
 
@@ -48,6 +50,8 @@ export default {
   },
   methods: {
     handleSearch() {
+      this.page = 1
+      this.$router.push({ query: { page: 1 } })
       this.fetchData()
     },
     async fetchData(page) {

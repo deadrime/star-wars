@@ -20,7 +20,7 @@
         </div>
       </Card>
     </div>
-    <Pagination :page="page" :total="total" @change="handleChangePage" />
+    <Pagination :page.sync="page" :total="total" @change="handleChangePage" />
   </div>
 </template>
 
@@ -48,6 +48,8 @@ export default {
   },
   methods: {
     handleSearch() {
+      this.page = 1
+      this.$router.push({ query: { page: 1 } })
       this.fetchData()
     },
     async fetchData(page) {

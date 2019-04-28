@@ -31,6 +31,11 @@ export default {
       default: 1
     }
   },
+  watch: {
+    page(value) {
+      this.currentPage = value
+    }
+  },
   data() {
     return {
       currentPage: this.page
@@ -45,11 +50,13 @@ export default {
     handleNextPage() {
       if (this.currentPage >= this.totalPages) return
       this.currentPage++
+      this.$emit('update:page', this.currentPage)
       this.$emit('change', this.currentPage)
     },
     handlePrevPage() {
       if (this.currentPage <= 1) return
       this.currentPage--
+      this.$emit('update:page', this.currentPage)
       this.$emit('change', this.currentPage)
     }
   }

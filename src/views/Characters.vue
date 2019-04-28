@@ -26,7 +26,7 @@
         </div>
       </Card>
     </div>
-    <Pagination :page="page" :total="total" @change="handleChangePage" />
+    <Pagination :page.sync="page" :total="total" @change="handleChangePage" />
   </main>
 </template>
 
@@ -67,6 +67,8 @@ export default {
       this.loading = false
     },
     handleSearch() {
+      this.page = 1
+      this.$router.push({ query: { page: 1 } })
       this.fetchData()
     },
     handleChangePage(page) {
