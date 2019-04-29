@@ -65,6 +65,7 @@ export default {
       this.loading = false
     },
     handleChangePage(page) {
+      this.$router.push({ query: { page } })
       this.fetchData(page)
     }
   },
