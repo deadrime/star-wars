@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+const env = process.env.NODE_ENV
 const instance = axios.create({
-  baseURL: 'https://swapi.dev/api/'
+  baseURL:
+    env === 'development'
+      ? 'https://swapi.dev/api/'
+      : 'https://cors-anywhere.herokuapp.com/https://swapi.dev/api/'
 })
 
 instance.interceptors.response.use(
