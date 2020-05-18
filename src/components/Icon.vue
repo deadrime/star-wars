@@ -105,7 +105,10 @@ export default {
       // для сокращения запросов к серверу
       if (!cache.has(url)) {
         try {
-          cache.set(url, fetch(url).then(r => r.text()))
+          cache.set(
+            url,
+            fetch(url).then(r => r.text())
+          )
         } catch (e) {
           cache.delete(url)
         }
