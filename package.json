@@ -11,7 +11,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "core-js": "^2.6.5",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "posthtml-render": "^1.1.4",
     "postsvg": "^2.2.7",
     "stylus": "^0.54.5",
