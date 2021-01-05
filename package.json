@@ -9,7 +9,7 @@
     "now-build": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "core-js": "^2.6.5",
     "lodash": "^4.17.11",
     "posthtml-render": "^1.1.4",
